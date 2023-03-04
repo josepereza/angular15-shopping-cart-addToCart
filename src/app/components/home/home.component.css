@@ -1,0 +1,9 @@
+.box{
+    border:1px solid burlywood;
+    border-radius: 20px;
+    padding: 10px;
+}
+.content span {
+    font-size: 18px;
+    font-weight: 800px;
+}
