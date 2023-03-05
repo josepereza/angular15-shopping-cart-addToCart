@@ -1,4 +1,10 @@
 # Angular15ShoppingCartAdd
+## Tutorial proyecto:
+* https://cdevblog.com/angular-add-to-cart
+* https://www.youtube.com/watch?v=e3FmFzd7Z9c&list=PL-zhdk-KbnqAGrvB0YaZMOwl2aUsfn-6Y&index=11
+
+![images](shopping1.png)
+![images](shopping2.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.1.
 
