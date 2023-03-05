@@ -1,94 +1,30 @@
 <section class="product">
-  <div class="container  ">
+  <div class="container mt-3 ">
     <div class="row ">
-      <div class="col-sm-12 col-md-3 text-center">
+      <div *ngFor="let item of productArray" class="col-sm-12 col-md-3 text-center">
         <div class="box">
           <div class="product_image">
-            <img src="../../../assets/images/t1.jpg" width="100%" alt="" />
+            <img src="{{item.img}}" width="100%" alt="" />
           </div>
           <div class="content">
-            <h4>400 €</h4>
+            <h4>{{item.precio}} €</h4>
           </div>
   
-            <button type="button" class="btn btn-primary">
+            <button (click)="inc(item)" type="button" class="btn btn-primary">
               <i class="fa fa-plus"></i>
             </button>
-            <span style="padding: 5px">1</span>
-            <button type="button" class="btn btn-primary">
+            <span style="padding: 5px">{{item.qty}}</span>
+            <button (click)="dec(item)" type="button" class="btn btn-primary">
               <i class="fa fa-minus"></i>
             </button>
-            <button class="btn btn-primary" style="width: 100%; margin-top: 10px; background-color: green;">Add to Cart</button>
+            <button class="btn btn-primary" (click)="addCart(item)"  style="width: 100%; margin-top: 10px; background-color: green;">Add to Cart</button>
 
           </div>
 
           
         </div>
-        <div class="col-sm-12 col-md-3 text-center">
-            <div class="box">
-              <div class="product_image">
-                <img src="../../../assets/images/t1.jpg" width="100%" alt="" />
-              </div>
-              <div class="content">
-                <h4>400 €</h4>
-              </div>
       
-                <button type="button" class="btn btn-primary">
-                  <i class="fa fa-plus"></i>
-                </button>
-                <span style="padding: 5px">1</span>
-                <button type="button" class="btn btn-primary">
-                  <i class="fa fa-minus"></i>
-                </button>
-                <button class="btn btn-primary" style="width: 100%; margin-top: 10px; background-color: green;">Add to Cart</button>
-    
-              </div>
-    
-              
-            </div>
-            <div class="col-sm-12 col-md-3 text-center">
-                <div class="box">
-                  <div class="product_image">
-                    <img src="../../../assets/images/t1.jpg" width="100%" alt="" />
-                  </div>
-                  <div class="content">
-                    <h4>400 €</h4>
-                  </div>
-          
-                    <button type="button" class="btn btn-primary">
-                      <i class="fa fa-plus"></i>
-                    </button>
-                    <span style="padding: 5px">1</span>
-                    <button type="button" class="btn btn-primary">
-                      <i class="fa fa-minus"></i>
-                    </button>
-                    <button class="btn btn-primary" style="width: 100%; margin-top: 10px; background-color: green;">Add to Cart</button>
-        
-                  </div>
-        
-                  
-                </div>
-                <div class="col-sm-12 col-md-3 text-center">
-                    <div class="box">
-                      <div class="product_image">
-                        <img src="../../../assets/images/t1.jpg" width="100%" alt="" />
-                      </div>
-                      <div class="content">
-                        <h4>400 €</h4>
-                      </div>
-              
-                        <button type="button" class="btn btn-primary">
-                          <i class="fa fa-plus"></i>
-                        </button>
-                        <span style="padding: 5px">1</span>
-                        <button type="button" class="btn btn-primary">
-                          <i class="fa fa-minus"></i>
-                        </button>
-                        <button class="btn btn-primary" style="width: 100%; margin-top: 10px; background-color: green;">Add to Cart</button>
-            
-                      </div>
-            
-                      
-                    </div>
+                        
 
       </div>
     </div>

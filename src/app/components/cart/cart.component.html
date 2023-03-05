@@ -1,56 +1,72 @@
 <div class="container mt-4">
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">imagen</th>
-            <th scope="col">Precio</th>
-            <th scope="col">cantidad</th>
-            <th scope="col">Subtotal</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="align-middle">
-            <td><img src="../../../assets/images/t1.jpg" width="100px" alt=""></td>
-            <td>400 €</td>
-            <td>
-                <button type="button" class="btn btn-primary">
-                    <i class="fa fa-plus"></i>
-                  </button>
-                  <span style="padding: 5px">1</span>
-                  <button type="button" class="btn btn-primary">
-                    <i class="fa fa-minus"></i>
-                  </button>
-            </td>
-            <td>800 €</td>
-          </tr>
-          <tr class="align-middle">
-            <td><img src="../../../assets/images/t3.jpg" width="100px" alt=""></td>
-            <td>400 €</td>
-            <td>
-                <button type="button" class="btn btn-primary">
-                    <i class="fa fa-plus"></i>
-                  </button>
-                  <span style="padding: 5px">1</span>
-                  <button type="button" class="btn btn-primary">
-                    <i class="fa fa-minus"></i>
-                  </button>
-            </td>
-            <td>800 €</td>
-          </tr>
-          <tr class="align-middle">
-            <td><img src="../../../assets/images/t2.jpg" width="100px" alt=""></td>
-            <td>400 €</td>
-            <td>
-                <button type="button" class="btn btn-primary">
-                    <i class="fa fa-plus"></i>
-                  </button>
-                  <span style="padding: 5px">1</span>
-                  <button type="button" class="btn btn-primary">
-                    <i class="fa fa-minus"></i>
-                  </button>
-            </td>
-            <td>800 €</td>
-          </tr>
-        </tbody>
-      </table>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">imagen</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Qty</th>
+        <th scope="col">SubT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let getCartDetail of getCartDetails" class="align-middle">
+        <td><img src="{{ getCartDetail.img }}" width="100px" alt="" /></td>
+        <td>{{ getCartDetail.precio }}</td>
+        <td>
+          <button
+            type="button"
+            (click)="incQnt(getCartDetail.prodId, getCartDetail.qty)"
+            class="btn btn-primary"
+          >
+            <i class="fa fa-plus"></i>
+          </button>
+          <span style="padding: 5px">{{ getCartDetail.qty }}</span>
+          <button
+            type="button"
+            (click)="decQnt(getCartDetail.prodId, getCartDetail.qty)"
+            class="btn btn-primary"
+          >
+            <i class="fa fa-minus"></i>
+          </button>
+        </td>
+        <td>{{ getCartDetail.qty * getCartDetail.precio | number }}</td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-danger delete"
+            (click)="singleDelete(getCartDetail.prodId)"
+          >
+            <i class="fa fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="row">
+    <div class="col-6">
+      <h3>Total - {{ total }} €</h3>
+    </div>
+    <div class="col-3 text-start">
+      <button
+        type="button"
+        class="btn btn-danger removeall"
+        (click)="removeall()"
+      >
+        <i class="fa fa-trash"></i>
+        Remove All Item
+      </button>
+    
+    </div>
+    <div class="col-3 text-end">
+      <a
+      type="button"
+      class="btn btn-primary removeall " 
+     routerLink="/home"
+    >
+    <i class="fa-sharp fa-solid fa-basket-shopping"></i>
+      Get back
+    </a>
+     </div>
+  </div>
 </div>
+

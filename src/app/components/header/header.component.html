@@ -1,14 +1,24 @@
 <header>
-    <div class="container">
-       
-       <div class="col-md-12 text-end ">
-<div class="cart_icon">
-    <i class="fa fa-shopping-cart" aria-hidden="true" routerLink="/cart"></i>
-    <div class="cart_value">
-        2
-    </div>
-</div>
-       </div>
+  <div class="container">
+  
+    <div class="row">
+        <div class="col-5">
+            <span  style="color:antiquewhite; font-size: 1em;">Shopping Cart </span> 
+        </div>
+        <div class="offset-1 col-6 text-end">
+            <div class="cart_icon" >
+              <i
+                class="fa fa-shopping-cart"
+                aria-hidden="true"
+                routerLink="/cart"
+              ></i>
+              <div class="cart_value">
+                {{ (cartService.cartSubject | async) || 0 }}
+              </div>
+            </div>
+          </div>
 
     </div>
+  
+  </div>
 </header>
